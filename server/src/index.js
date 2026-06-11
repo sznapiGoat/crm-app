@@ -3,6 +3,7 @@ const express = require('express');
 const cors = require('cors');
 const connectDB = require('./config/db');
 const clientRoutes = require('./routes/clients');
+const noteRoutes = require('./routes/notes');
 const authRoutes = require('./routes/auth');
 const { protect } = require('./middleware/auth');
 
@@ -19,6 +20,7 @@ app.use('/api/auth', authRoutes);
 
 // Protected routes
 app.use('/api/clients', protect, clientRoutes);
+app.use('/api/notes', protect, noteRoutes);
 
 // Health check
 app.get('/api/health', (req, res) => {

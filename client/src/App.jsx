@@ -7,6 +7,7 @@ import ClientList from './pages/ClientList';
 import ClientDetail from './pages/ClientDetail';
 import ClientNew from './pages/ClientNew';
 import ClientEdit from './pages/ClientEdit';
+import Notes from './pages/Notes';
 import Login from './pages/Login';
 import Register from './pages/Register';
 
@@ -66,6 +67,14 @@ export default function App() {
             element={
               <ProtectedRoute>
                 <Layout><ClientEdit /></Layout>
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/notes"
+            element={
+              <ProtectedRoute>
+                <Layout><Notes /></Layout>
               </ProtectedRoute>
             }
           />
